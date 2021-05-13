@@ -202,7 +202,7 @@ const AsideStyle = styled.div`
   .grey {
     color: grey;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1400px) {
     width: 35%;
     p {
       margin: 0.2rem;

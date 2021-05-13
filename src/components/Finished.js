@@ -84,6 +84,9 @@ const GameFinished = styled.div`
   @media screen and (max-width: 1200px) {
     width: 50%;
   }
+ @media screen and (max-width: 760px) {
+    margin: auto;
+  }
   @keyframes scaleInOut {
     from {
       transform: scale(1);
