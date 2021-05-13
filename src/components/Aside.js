@@ -227,6 +227,12 @@ const AsideStyle = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    position: absolute;
+    p {
+      margin: 0.2rem;
+    }
+  }
   @media screen and (max-width: 760px) {
     position: static;
     width: 50%;
