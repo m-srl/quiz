@@ -45,7 +45,7 @@ const Finished = ({
       } else {
         return (
           <GameFinished>
-            <h1>You lost the game, try again</h1>
+            <h1>You lost the game.</h1>
           </GameFinished>
         );
       }
@@ -61,6 +61,7 @@ const GameFinished = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction:column;
   min-height: 30vh;
   position: relative;
   width: 70%;
