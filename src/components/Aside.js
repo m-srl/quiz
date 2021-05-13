@@ -98,7 +98,7 @@ const Aside = ({ counter, setUsedFiftyFifty, gameFinished }) => {
 
 const AsideStyle = styled.div`
   width: 20%;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 2vw;
 
