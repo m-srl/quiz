@@ -81,7 +81,7 @@ const GameFinished = styled.div`
     color: green;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1400px) {
     width: 50%;
   }
  @media screen and (max-width: 760px) {

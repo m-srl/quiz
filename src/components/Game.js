@@ -186,7 +186,7 @@ const Game = ({
 };
 
 const GameContainer = styled.div`
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1400px) {
     max-width: 50%;
   }
   @media screen and (max-width: 1000px) {
@@ -214,7 +214,7 @@ const Question = styled.div`
     font-size: 2rem;
     text-align: center;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1400px) {
     width: 100%;
   }
   @media screen and (max-width: 760px) {
@@ -305,7 +305,7 @@ const Answers = styled.div`
   .answer {
     cursor: pointer;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1400px) {
     width: 100%;
   }
   @media screen and (max-width: 760px) {
@@ -333,7 +333,7 @@ const Withdraw = styled.div`
       transition: 1s ease;
     }
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1400px) {
     width: 100%;
   }
   @media screen and (max-width: 760px) {
