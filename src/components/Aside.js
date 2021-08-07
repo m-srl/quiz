@@ -5,7 +5,12 @@ import MoneyItem from "./MoneyItem";
 import timesup from "../assets/timeup.mp3";
 import { money } from "../util";
 
-const Aside = ({ counter, setUsedFiftyFifty, gameFinished }) => {
+const Aside = ({
+  counter,
+  setUsedFiftyFifty,
+  gameFinished,
+  answersCorrect,
+}) => {
   // add css to show how much is the current question worth
   useLayoutEffect(() => {
     const test = document.querySelectorAll(".money-item");
@@ -20,8 +25,6 @@ const Aside = ({ counter, setUsedFiftyFifty, gameFinished }) => {
         test[test.length - 1 - i].classList.remove("current");
       }
     }
-
-    console.log(test[0]);
   }, [counter]);
 
   const timesUpSound = new Audio(timesup);
@@ -99,7 +102,7 @@ const Aside = ({ counter, setUsedFiftyFifty, gameFinished }) => {
 const AsideStyle = styled.div`
   width: 20%;
   position: absolute;
-  top: 0;
+  top: 0%;
   right: 2vw;
 
   > div {
@@ -107,7 +110,7 @@ const AsideStyle = styled.div`
     align-items: center;
     flex-direction: column;
 
-    margin: 1rem 0 2rem 0;
+    margin-bottom: 2rem;
   }
   .current {
     background: orange;
@@ -124,8 +127,6 @@ const AsideStyle = styled.div`
   }
   .end-timer {
     display: none;
-  }
-  p {
   }
   .money,
   .helper {
@@ -163,13 +164,13 @@ const AsideStyle = styled.div`
     }
     cursor: pointer;
     position: relative;
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     .fifty-top,
     .fifty-bottom,
     .fifty-line {
       position: absolute;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       pointer-events: none;
     }
     .fifty-line {

@@ -16,6 +16,15 @@ const Finished = ({
         <GameFinished>
           <h1>Congratulations, you managed to win milion:</h1>
           <h2>{currentMoney}</h2>
+          <StartOver>
+            <button
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
+              Start again
+            </button>
+          </StartOver>
         </GameFinished>
       );
     } else if (playerQuit) {
@@ -23,6 +32,15 @@ const Finished = ({
         <GameFinished>
           <h1>Congratulations, you withdrew with this amount of money:</h1>
           <h2>{currentMoney}</h2>
+          <StartOver>
+            <button
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
+              Start again
+            </button>
+          </StartOver>
         </GameFinished>
       );
     } else if (playerLost) {
@@ -33,6 +51,15 @@ const Finished = ({
               Congratulations, you managed to reach the second step and won:
             </h1>
             <h2>{currentMoney}</h2>
+            <StartOver>
+              <button
+                onClick={() => {
+                  window.location.reload();
+                }}
+              >
+                Start again
+              </button>
+            </StartOver>
           </GameFinished>
         );
       } else if (reachedFirstStep) {
@@ -40,12 +67,30 @@ const Finished = ({
           <GameFinished>
             <h1>Congratulations, you reached the first step and won:</h1>
             <h2>{currentMoney}</h2>
+            <StartOver>
+              <button
+                onClick={() => {
+                  window.location.reload();
+                }}
+              >
+                Start again
+              </button>
+            </StartOver>
           </GameFinished>
         );
       } else {
         return (
           <GameFinished>
             <h1>You lost the game.</h1>
+            <StartOver>
+              <button
+                onClick={() => {
+                  window.location.reload();
+                }}
+              >
+                Start again
+              </button>
+            </StartOver>
           </GameFinished>
         );
       }
@@ -61,7 +106,7 @@ const GameFinished = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
   min-height: 30vh;
   position: relative;
   width: 70%;
@@ -84,7 +129,7 @@ const GameFinished = styled.div`
   @media screen and (max-width: 1400px) {
     width: 50%;
   }
- @media screen and (max-width: 760px) {
+  @media screen and (max-width: 760px) {
     margin: auto;
   }
   @keyframes scaleInOut {
@@ -105,6 +150,34 @@ const GameFinished = styled.div`
 
       opacity: 1;
     }
+  }
+`;
+
+const StartOver = styled.div`
+  display: flex;
+  width: 70%;
+  margin: 1rem 1rem;
+  padding: 0rem 2rem;
+  justify-content: center;
+  user-select: none;
+  button {
+    padding: 1rem 4rem;
+    font-size: 1.3rem;
+    background: #0f82b8;
+    border: 1px solid rgb(77, 175, 255);
+    color: white;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    &:hover {
+      background: #16a7eb;
+      transition: 1s ease;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 760px) {
+    margin: 1rem 0;
   }
 `;
 

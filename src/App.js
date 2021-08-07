@@ -48,6 +48,7 @@ function App() {
         dispatch={dispatch}
       />
       <Aside
+      answersCorrect={answersCorrect}
         gameFinished={gameFinished}
         setUsedFiftyFifty={setUsedFiftyFifty}
         counter={counter}

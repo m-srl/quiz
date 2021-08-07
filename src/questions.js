@@ -44,7 +44,7 @@ export const questions = [
   {
     question: "What is an ISP?",
     answers: [
-      "International Services Presenter",
+      "International Special Police",
       "Internet Service Provider",
       "Internal Security Protocol",
       "Internet Service Program",
@@ -68,7 +68,7 @@ export const questions = [
     answers: [
       "A virus",
       "A bug",
-      "A container where files can be stored",
+      "A container of files",
       "A location on a website",
     ],
     correct: 2,
@@ -96,9 +96,9 @@ export const questions = [
   {
     question: "What is the definition of shareware?",
     answers: [
-      "Software that is free",
-      "Software that is free on a trial basis",
-      "Software that was announced but not launched",
+      "Free Software",
+      "Free Software on a trial basis",
+      "Software never launched",
       "Shared data on a computer",
     ],
     correct: 1,
@@ -113,7 +113,7 @@ export const questions = [
   },
   {
     question: "What is the error message of HTTP 404?",
-    answers: ["Server not found", "Forbidden", "No internet", "Server found"],
+    answers: ["Not found", "Forbidden", "OK", "Bad request"],
     correct: 0,
     id: 15,
   },

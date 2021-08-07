@@ -13,7 +13,7 @@ const MoneyItem = ({ id, item }) => {
 
 const ParagraphStyle = styled.p`
   width: 90%;
-  margin: 0.4rem;
+  margin: 0.2rem;
   text-align: center;
   border-radius: 2rem;
   padding: 0.2rem 0 0.4rem 0;

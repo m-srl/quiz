@@ -32,6 +32,7 @@ const Game = ({
     const correctAnswerNumber = questions[counter].correct;
 
     const guess = e.currentTarget;
+
     const correctAnswersHandler = () => {
       setAnswersCorrect((prev) => prev + 1);
     };
@@ -39,7 +40,6 @@ const Game = ({
     if (e.currentTarget.innerText === correctAnswer) {
       correctAnswersHandler();
       setCurrentMoney(moneyArray[answersCorrect - 1]);
-      console.log(answersCorrect);
 
       if (answersCorrect === 15) {
         setMillionaire(true);
@@ -72,9 +72,11 @@ const Game = ({
           setDisplayComponent(false);
         }
       }, 2000);
-      allAnswers.forEach(
-        (item) => (item.childNodes[0].style.visibility = "visible")
-      );
+      allAnswers.forEach((item) => {
+        item.childNodes[0].style.visibility = "visible";
+        item.style["pointer-events"] = "auto";
+        item.style.cursor = "pointer";
+      });
     } else {
       guess.classList.add("loser");
       for (let i = 0; i < allAnswers.length; i++) {
@@ -110,7 +112,9 @@ const Game = ({
         setGameFinished(true);
       }, 300);
     } else {
-      alert("You can't withdraw before answering the first question");
+      alert(
+        "You can't withdraw before answering the first question or a wrong guess"
+      );
     }
   };
 
@@ -144,7 +148,12 @@ const Game = ({
       }
 
       allAnswers[wrongAnswers[0]].childNodes[0].style.visibility = "hidden";
+      allAnswers[wrongAnswers[0]].style["pointer-events"] = "none";
+      allAnswers[wrongAnswers[0]].style.cursor = "arrow";
+
       allAnswers[wrongAnswers[2]].childNodes[0].style.visibility = "hidden";
+      allAnswers[wrongAnswers[2]].style["pointer-events"] = "none";
+      allAnswers[wrongAnswers[2]].style.cursor = "arrow";
     }
 
     return;
@@ -252,6 +261,7 @@ const Answers = styled.div`
     /* flex-grow: 0; */
     text-align: center;
     font-size: 1.3rem;
+    z-index: 998;
   }
 
   .arrow-border::after {
@@ -305,8 +315,13 @@ const Answers = styled.div`
   .answer {
     cursor: pointer;
   }
+
   @media screen and (max-width: 1400px) {
     width: 100%;
+    display: block;
+    > p.arrow-border {
+      width: 75%;
+    }
   }
   @media screen and (max-width: 760px) {
     margin: 1rem 0;
@@ -316,7 +331,7 @@ const Answers = styled.div`
 const Withdraw = styled.div`
   display: flex;
   width: 70%;
-  margin: 0rem 1rem;
+  margin: 1rem 1rem;
   padding: 0rem 2rem;
   justify-content: center;
   user-select: none;
