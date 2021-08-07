@@ -60,6 +60,7 @@ const Game = ({
           allAnswers[i].classList.add("loser");
         }
       }
+      console.log(allAnswers, "toate rasp1");
       setTimeout(() => {
         clearInterval(correctAnswerAnimation);
         for (let i = 0; i < allAnswers.length; i++) {
@@ -74,14 +75,13 @@ const Game = ({
       }, 2000);
       allAnswers.forEach((item) => {
         item.childNodes[0].style.visibility = "visible";
-        item.style["pointer-events"] = "auto";
-        item.style.cursor = "pointer";
       });
     } else {
       guess.classList.add("loser");
       for (let i = 0; i < allAnswers.length; i++) {
         allAnswers[i].classList.add("disable-answers");
       }
+      console.log(allAnswers, "toate rasp");
       const showCorrectAnswerAnimation = setInterval(() => {
         allAnswers[correctAnswerNumber].classList.toggle("winner");
       }, 400);
@@ -148,12 +148,10 @@ const Game = ({
       }
 
       allAnswers[wrongAnswers[0]].childNodes[0].style.visibility = "hidden";
-      allAnswers[wrongAnswers[0]].style["pointer-events"] = "none";
-      allAnswers[wrongAnswers[0]].style.cursor = "arrow";
+      allAnswers[wrongAnswers[0]].classList.add("disable-answers");
 
       allAnswers[wrongAnswers[2]].childNodes[0].style.visibility = "hidden";
-      allAnswers[wrongAnswers[2]].style["pointer-events"] = "none";
-      allAnswers[wrongAnswers[2]].style.cursor = "arrow";
+      allAnswers[wrongAnswers[2]].classList.add("disable-answers");
     }
 
     return;
@@ -261,7 +259,6 @@ const Answers = styled.div`
     /* flex-grow: 0; */
     text-align: center;
     font-size: 1.3rem;
-    z-index: 998;
   }
 
   .arrow-border::after {
@@ -293,6 +290,7 @@ const Answers = styled.div`
     transform: rotate(-45deg);
   }
   .disable-answers {
+    cursor: arrow;
     pointer-events: none;
   }
   .winner {

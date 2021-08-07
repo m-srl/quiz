@@ -109,7 +109,9 @@ const AsideStyle = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    p {
+      margin:0.2;
+    }
     margin-bottom: 2rem;
   }
   .current {
